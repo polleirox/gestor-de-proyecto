@@ -1,0 +1,33 @@
+<h1>Ingrese proyecto</h1>
+<form method="get" action=" <%= pages_create_path %> ">
+   <div class="form-group">
+   <label for="name">Nombre proyecto</label>
+    <input name="name" class="form-control" placeholder="Ingresar nombre proyecto">
+    </div>
+
+    <div class="form-group">
+        <label for="description">Descripción</label> 
+        <textarea name="description" class="form-control" placeholder="Ingresar descripcion del proyecto"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="start">Start date:</label>
+        <input type="date" id="start" name="start" min="1900-01-01" max="2099-12-31">
+    </div>
+
+    <div class="form-group">
+        <label for="end">End date :</label>
+        <input type="date" id="start" name="end" min="1900-01-01" max="2099-12-31">
+    </div>
+
+    <%= form_tag("/search", method: "get") do %>
+        <label for="state">Estado</label>
+        <select class="form-control" id="state" name="state">
+            <option>Propuesta</option>
+            <option>En progreso</option>
+            <option>Terminado</option>
+        </select> 
+        <br>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    <% end %>
+</form>
